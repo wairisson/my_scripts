@@ -1,0 +1,8 @@
+---
+Routers:
+  - asbr01
+  - asbr02
+  
+#Switches:
+#  - asw01
+#  - asw02

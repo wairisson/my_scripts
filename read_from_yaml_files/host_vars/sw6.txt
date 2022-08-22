@@ -1,0 +1,2 @@
+vlan 6
+name TESTE6 

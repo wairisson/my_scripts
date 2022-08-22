@@ -1,0 +1,4 @@
+hostname {{ hostname }}
+{% for peer in bgp_peers %}
+neighbor {{peer}}
+{% endfor %}

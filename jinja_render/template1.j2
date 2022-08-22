@@ -1,0 +1,13 @@
+hostname {{hostname}}
+{% if netflow_server is defined %}
+netflow-server {{netflow_server}}
+{% endif %}
+{% if vendor is defined %}
+vendor {{vendor}}
+{% endif %}
+{% if interfaces is defined %}
+{% for interface in interfaces -%}
+ interface {{interface['name']}}
+ ip address {{interface['ipv4_add']}} {{interface['mk']}}
+{% endfor %}
+{% endif %}

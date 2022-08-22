@@ -1,0 +1,9 @@
+---
+Groups:
+  Routers:
+    - RouterA
+    - RouterB
+  
+  Switches:
+    - SwitchA
+    - SwitchB

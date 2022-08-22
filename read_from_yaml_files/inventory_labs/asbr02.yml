@@ -1,0 +1,4 @@
+---
+hostname: asbr02
+netflow_server: 10.0.0.254
+syslog_server: 10.0.0.253

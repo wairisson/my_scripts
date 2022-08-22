@@ -1,0 +1,2 @@
+snmp-server community LeafRO RO
+snmp-server community LeafRW RW

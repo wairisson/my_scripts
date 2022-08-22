@@ -1,0 +1,2 @@
+snmp-server community SpineRO RO
+snmp-server community SpineRW RW
