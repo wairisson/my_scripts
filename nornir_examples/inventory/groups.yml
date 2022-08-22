@@ -1,0 +1,11 @@
+---
+global:
+   data:
+      domain: lab.local
+      asn: 65500
+
+cisco_ios:
+   data:
+      vlans:
+         100: frontend
+         200: backend
