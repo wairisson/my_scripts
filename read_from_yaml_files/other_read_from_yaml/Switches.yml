@@ -1,0 +1,4 @@
+---
+snmp_servers: "10.0.0.1"
+syslog_servers: "10.0.0.2"
+ntp_servers: "10.0.0.3"
