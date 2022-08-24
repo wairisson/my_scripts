@@ -1,0 +1,5 @@
+---
+# Este arquivo será lido pelo python como uma lista
+- RouterA
+- RouterB
+- RouterC

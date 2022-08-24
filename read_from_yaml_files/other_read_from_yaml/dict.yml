@@ -1,0 +1,10 @@
+---
+# Este arquivo será lido pelo python como um dictionary
+Routers:
+  - Rt1
+  - Rt2
+
+Switches:
+  - Sw1
+  - Sw2
+
