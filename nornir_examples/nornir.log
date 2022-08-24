@@ -2,3 +2,4 @@
 2022-08-22 11:22:07,530 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 1 hosts
 2022-08-22 11:22:38,533 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 2 hosts
 2022-08-22 11:22:41,964 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 2 hosts
+2022-08-23 18:13:20,962 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 1 hosts
