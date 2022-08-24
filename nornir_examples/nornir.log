@@ -1393,3 +1393,433 @@ Traceback (most recent call last):
     print(f"Host ==== {host}")
 NameError: name 'host' is not defined
 
+2022-08-24 20:22:31,081 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-24 20:22:31,089 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:22:31,090 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 28, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-24 20:26:45,702 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:27:44,362 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:27:44,363 -  nornir.core -  WARNING -        run() - Task 'push_vlans' has not been run – 0 hosts selected
+2022-08-24 20:28:53,880 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:28:53,880 -  nornir.core -  WARNING -        run() - Task 'push_vlans' has not been run – 0 hosts selected
+2022-08-24 20:31:04,451 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:31:04,453 -  nornir.core -  WARNING -        run() - Task 'push_vlans' has not been run – 0 hosts selected
+2022-08-24 20:32:39,082 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:32:39,083 -  nornir.core -  WARNING -        run() - Task 'push_vlans' has not been run – 0 hosts selected
+2022-08-24 20:33:21,236 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:33:21,237 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-24 20:33:21,246 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:33:21,247 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 32, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-24 20:34:09,401 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:34:09,402 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-24 20:34:09,409 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:34:09,410 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 32, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-24 20:34:28,034 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:34:28,034 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-24 20:34:28,044 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:34:28,045 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 32, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-24 20:37:07,557 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:37:07,558 -  nornir.core -  WARNING -        run() - Task 'load_vlan' has not been run – 0 hosts selected
+2022-08-24 20:38:05,678 -  nornir.core -  WARNING -        run() - Task 'load_vars' has not been run – 0 hosts selected
+2022-08-24 20:38:05,679 -  nornir.core -  WARNING -        run() - Task 'load_vlan' has not been run – 0 hosts selected
+2022-08-24 20:40:59,327 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:40:59,328 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './host_vars/spine4.yaml'
+
+2022-08-24 20:40:59,329 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 10, in load_vars
+    data = task.run(task=load_yaml,file=f'./host_vars/{task.host}.yaml')
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-08-24 20:40:59,331 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:41:50,503 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:41:50,505 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './host_vars/spine4.yaml'
+
+2022-08-24 20:41:50,506 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 10, in load_vars
+    data = task.run(task=load_yaml,file=f'./host_vars/{task.host}.yaml')
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-08-24 20:41:50,507 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:42:16,919 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:42:16,922 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:42:16,930 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:42:16,931 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:42:37,378 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:42:37,381 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:42:37,389 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 20:42:37,390 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:47:42,403 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:47:42,406 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:49:08,452 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:49:08,455 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:49:08,463 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{ number }}
+jinja2.exceptions.UndefinedError: 'number' is undefined
+
+2022-08-24 20:49:08,464 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:49:33,151 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:49:33,154 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:49:33,161 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{ number }}
+jinja2.exceptions.UndefinedError: 'number' is undefined
+
+2022-08-24 20:49:33,162 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:51:09,185 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:51:09,187 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:51:09,195 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{ number }}
+jinja2.exceptions.UndefinedError: 'number' is undefined
+
+2022-08-24 20:51:09,196 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:51:31,165 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:51:31,168 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:51:31,176 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{ number }}
+jinja2.exceptions.UndefinedError: 'number' is undefined
+
+2022-08-24 20:51:31,177 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 44, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 20:51:54,214 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 20:51:54,222 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 20:51:54,234 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{ number }}
+jinja2.exceptions.UndefinedError: 'number' is undefined
+
+2022-08-24 20:51:54,235 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 45, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 21:01:35,888 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 21:01:35,943 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 21:04:16,426 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 21:04:16,467 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 1 hosts
+2022-08-24 21:05:48,927 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 21:05:48,977 -  nornir.core -     INFO -        run() - Running task 'load_vlan' with args {} on 2 hosts
+2022-08-24 21:05:50,221 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    {% set vlans = host.facts.VLAN %}
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'facts'
+
+2022-08-24 21:05:50,222 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 46, in load_vlan
+    v = task.run(task=template_file, template="add_vlans.j2", path="./templates")
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-24 21:06:04,178 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'VLAN Commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/paramiko/client.py", line 412, in connect
+    server_key = t.get_remote_server_key()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/paramiko/transport.py", line 879, in get_remote_server_key
+    raise SSHException("No existing session")
+paramiko.ssh_exception.SSHException: No existing session
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1091, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: Paramiko: 'No existing session' error: try increasing 'conn_timeout' to 15 seconds or larger.
+
+2022-08-24 21:06:04,217 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ubuntu/python/my_scripts/nornir_examples/05.nornir.py", line 50, in load_vlan
+    task.run(task=netmiko_send_config, name="VLAN Commands", config_commands=vlan_send)
+  File "/home/ubuntu/python/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: VLAN Commands (failed)
+
+

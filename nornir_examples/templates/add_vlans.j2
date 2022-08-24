@@ -1,2 +1,5 @@
-vlan {{vlan_id}} 
-name {{vlan_name}}
+{% set vlans = host.facts.VLAN %}
+{% for vlan in vlans %}
+vlan {{ vlan.number }}
+name {{ vlan.name }}
+{% endfor %}
