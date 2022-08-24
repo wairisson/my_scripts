@@ -11,3 +11,9 @@ ip domain-name lab.local
 
 crypto key generate rsa 
 1024
+
+
+https://github.com/twin-bridges/nornir_course/blob/master/nornir3_changes.md
+https://snyk.io/advisor/python/nornir/functions/nornir.plugins.tasks.networking.netmiko_send_command
+
+https://github.com/twin-bridges/nornir_course/blob/9ef99985bd892ff0e1b5da99b37d574550e61e16/class4/exercises/exercise5/exercise5a.py

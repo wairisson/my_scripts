@@ -3,3 +3,1393 @@
 2022-08-22 11:22:38,533 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 2 hosts
 2022-08-22 11:22:41,964 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 2 hosts
 2022-08-23 18:13:20,962 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 1 hosts
+2022-08-23 18:47:58,669 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 1 hosts
+2022-08-23 19:30:50,533 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:30:50,537 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 11, in add_vlan
+    cmd = task.run(task=template_file,
+NameError: name 'template_file' is not defined
+
+2022-08-23 19:45:17,737 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:45:17,739 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 14, in add_vlan
+    cmd = task.run(task=template_file,
+NameError: name 'template_file' is not defined
+
+2022-08-23 19:47:55,837 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:47:55,842 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: add_vlans.j2
+
+2022-08-23 19:47:55,842 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 14, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-23 19:48:50,388 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:49:01,099 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\nname\\ vlan10\\\n\\\nvlan\\ 11\\\nname\\ vlan\\ 11' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 19:49:01,099 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 19:49:41,955 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:49:52,600 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\nname\\ vlan10\\\n\\\nvlan\\ 11\\\nname\\ vlan\\ 11' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 19:49:52,602 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 19:50:51,007 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:51:01,706 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\nname\\ vlan10\\\n\\\nvlan\\ 11\\\nname\\ vlan\\ 11' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 19:51:01,707 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 19:53:10,218 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 19:53:20,846 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\nname\\ vlan10\\\n\\\nvlan\\ 11\\\nname\\ vlan\\ 11' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 19:53:20,847 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:04:30,957 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:04:30,960 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 18, in add_vlan
+    task.run(task=send_configs, configs=configuration)
+NameError: name 'send_configs' is not defined
+
+2022-08-23 20:04:43,010 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:04:43,014 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 18, in add_vlan
+    task.run(task=send_configs, configs=configuration)
+NameError: name 'send_configs' is not defined
+
+2022-08-23 20:06:32,790 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:06:44,243 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\nname\\ vlan10\\\n\\\nvlan\\ 11\\\nname\\ vlan\\ 11' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:06:44,243 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:06:59,659 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:07:34,466 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:07:45,793 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\\n\\\nname\\ vlan\\ 10' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:07:45,794 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:08:08,457 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:08:19,865 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 10\\ \\\n\\\nname\\ vlan\\ 10' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:08:19,865 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 20, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:12:29,208 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:12:29,219 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 20:12:29,219 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 14, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-23 20:13:50,700 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:14:02,316 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:14:02,316 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 23, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:14:51,992 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:15:03,197 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:15:03,198 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 23, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:18:29,959 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:18:40,653 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 20:18:40,653 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 23, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 20:31:15,340 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:33:00,993 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:34:17,871 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:41:40,300 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 20:48:28,549 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:48:28,552 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Pulling Hosts Vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './host_vars/spine4.yml'
+
+2022-08-23 20:48:28,553 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 18, in load_vars
+    data = task.run(task=load_yaml, name="Pulling Hosts Vars", file=f"./host_vars/{task.host}.yml")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Pulling Hosts Vars (failed)
+
+
+2022-08-23 20:49:47,377 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:49:47,380 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Pulling Hosts Vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './host_vars/spine4.yml'
+
+2022-08-23 20:49:47,381 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 18, in load_vars
+    data = task.run(task=load_yaml, name="Pulling Hosts Vars", file=f"./host_vars/{task.host}.yml")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Pulling Hosts Vars (failed)
+
+
+2022-08-23 20:50:05,264 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:50:05,267 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+NameError: name 'push_vlans' is not defined
+
+2022-08-23 20:50:25,620 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:50:25,622 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+NameError: name 'push_vlans' is not defined
+
+2022-08-23 20:58:35,165 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:58:35,171 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 20:58:35,171 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 25, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-23 20:58:52,058 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 20:58:52,065 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 20:58:52,066 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 25, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-23 20:59:46,306 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:00:48,562 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:01:13,822 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:01:21,573 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:01:21,579 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 21:01:21,579 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 25, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-23 21:01:56,424 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:01:56,426 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 25, in push_vlans
+    print(vlan_id)
+NameError: name 'vlan_id' is not defined
+
+2022-08-23 21:03:00,297 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:03:00,299 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 19, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 24, in push_vlans
+    print(vlan_id)
+NameError: name 'vlan_id' is not defined
+
+2022-08-23 21:03:18,526 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:03:18,527 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 19, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 24, in push_vlans
+    print(vlan_id)
+NameError: name 'vlan_id' is not defined
+
+2022-08-23 21:03:45,535 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 21:03:45,949 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Pulling Hosts Vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 25, in load_yaml
+    yml = ruamel.yaml.YAML(typ="safe")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 74, in __init__
+    for pu in ([] if plug_ins is None else plug_ins) + self.official_plug_ins():
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 753, in official_plug_ins
+    res = [x.replace(gpbd, "")[1:-3] for x in glob.glob(bd + '/*/__plug_in__.py')]
+  File "/usr/lib/python3.8/glob.py", line 21, in glob
+    return list(iglob(pathname, recursive=recursive))
+  File "/usr/lib/python3.8/glob.py", line 73, in _iglob
+    for dirname in dirs:
+  File "/usr/lib/python3.8/glob.py", line 74, in _iglob
+    for name in glob_in_dir(dirname, basename, dironly):
+  File "/usr/lib/python3.8/glob.py", line 82, in _glob1
+    names = list(_iterdir(dirname, dironly))
+  File "/usr/lib/python3.8/glob.py", line 129, in _iterdir
+    pass
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+2022-08-23 21:03:45,953 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 19, in load_vars
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  [Previous line repeated 975 more times]
+  File "05.nornir.py", line 24, in push_vlans
+    data = task.run(task=load_yaml, name="Pulling Hosts Vars", file=f"./host_vars/{task.host}.yml")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Pulling Hosts Vars (failed)
+
+
+2022-08-23 21:05:52,751 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 21:05:53,158 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Pulling Hosts Vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 25, in load_yaml
+    yml = ruamel.yaml.YAML(typ="safe")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 74, in __init__
+    for pu in ([] if plug_ins is None else plug_ins) + self.official_plug_ins():
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 753, in official_plug_ins
+    res = [x.replace(gpbd, "")[1:-3] for x in glob.glob(bd + '/*/__plug_in__.py')]
+  File "/usr/lib/python3.8/glob.py", line 21, in glob
+    return list(iglob(pathname, recursive=recursive))
+  File "/usr/lib/python3.8/glob.py", line 73, in _iglob
+    for dirname in dirs:
+  File "/usr/lib/python3.8/glob.py", line 74, in _iglob
+    for name in glob_in_dir(dirname, basename, dironly):
+  File "/usr/lib/python3.8/glob.py", line 82, in _glob1
+    names = list(_iterdir(dirname, dironly))
+  File "/usr/lib/python3.8/glob.py", line 129, in _iterdir
+    pass
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+2022-08-23 21:05:53,161 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  [Previous line repeated 976 more times]
+  File "05.nornir.py", line 24, in push_vlans
+    data = task.run(task=load_yaml, name="Pulling Hosts Vars", file=f"./host_vars/{task.host}.yml")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Pulling Hosts Vars (failed)
+
+
+2022-08-23 23:35:47,780 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 23:35:48,234 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Pulling Hosts Vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 25, in load_yaml
+    yml = ruamel.yaml.YAML(typ="safe")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 74, in __init__
+    for pu in ([] if plug_ins is None else plug_ins) + self.official_plug_ins():
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 753, in official_plug_ins
+    res = [x.replace(gpbd, "")[1:-3] for x in glob.glob(bd + '/*/__plug_in__.py')]
+  File "/usr/lib/python3.8/glob.py", line 21, in glob
+    return list(iglob(pathname, recursive=recursive))
+  File "/usr/lib/python3.8/glob.py", line 73, in _iglob
+    for dirname in dirs:
+  File "/usr/lib/python3.8/glob.py", line 74, in _iglob
+    for name in glob_in_dir(dirname, basename, dironly):
+  File "/usr/lib/python3.8/glob.py", line 82, in _glob1
+    names = list(_iterdir(dirname, dironly))
+  File "/usr/lib/python3.8/glob.py", line 129, in _iterdir
+    pass
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+2022-08-23 23:35:48,238 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  File "05.nornir.py", line 26, in push_vlans
+    push_vlans(task)
+  [Previous line repeated 976 more times]
+  File "05.nornir.py", line 24, in push_vlans
+    data = task.run(task=load_yaml, name="Pulling Hosts Vars", file=f"./host_vars/{task.host}.yml")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Pulling Hosts Vars (failed)
+
+
+2022-08-23 23:36:40,082 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 1 hosts
+2022-08-23 23:40:16,090 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:40:16,092 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+NameError: name 'push_vlans' is not defined
+
+2022-08-23 23:40:37,507 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:40:37,509 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+NameError: name 'push_vlans' is not defined
+
+2022-08-23 23:44:00,426 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:44:00,428 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "06.nornir.py", line 25, in push_vlans
+    print(host)
+NameError: name 'host' is not defined
+
+2022-08-23 23:44:55,790 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:44:55,791 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "06.nornir.py", line 25, in push_vlans
+    data = task.run(name="Pulling Hosts Vars")
+TypeError: run() missing 1 required positional argument: 'task'
+
+2022-08-23 23:45:04,547 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:45:04,549 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "06.nornir.py", line 25, in push_vlans
+    data = task.run(name="Pulling Hosts Vars")
+TypeError: run() missing 1 required positional argument: 'task'
+
+2022-08-23 23:45:10,596 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-23 23:45:10,597 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    push_vlans(task)
+  File "06.nornir.py", line 25, in push_vlans
+    data = task.run(name="Pulling Hosts Vars")
+TypeError: run() missing 1 required positional argument: 'task'
+
+2022-08-23 23:46:46,424 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 23:46:46,430 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 23:46:46,430 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 28, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-23 23:47:40,576 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 23:47:40,577 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 27, in push_vlans
+    print(vlan_id)
+NameError: name 'vlan_id' is not defined
+
+2022-08-23 23:48:28,032 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 23:48:28,034 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 27, in push_vlans
+    print(vlan_id)
+NameError: name 'vlan_id' is not defined
+
+2022-08-23 23:49:07,939 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-23 23:49:07,947 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-23 23:49:07,947 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 29, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-23 23:54:40,679 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:54:57,791 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:56:00,874 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:56:21,409 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:56:32,500 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 23:56:32,500 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 27, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 23:56:57,929 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:57:10,214 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 23:57:10,215 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 27, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 23:57:20,155 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:57:35,291 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-23 23:57:35,292 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 27, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-23 23:57:48,065 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:59:21,828 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:59:24,151 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sendind commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-23 23:59:24,153 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 33, in add_vlan
+    task.run(task=netmiko_send_command,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sendind commands (failed)
+
+
+2022-08-23 23:59:47,037 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-23 23:59:48,268 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sendind commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-23 23:59:48,269 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 33, in add_vlan
+    task.run(task=netmiko_send_command,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sendind commands (failed)
+
+
+2022-08-24 00:02:51,623 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 00:02:52,850 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2022-08-24 00:03:16,799 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 00:04:00,377 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 00:06:10,382 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 00:06:10,385 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 27, in add_vlan
+    configuration = test.splitlines()
+NameError: name 'test' is not defined
+
+2022-08-24 00:06:26,849 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 00:06:38,051 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'vlan\\ 620\\ \\\nname\\ vlan\\-620' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-24 00:06:38,052 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "04.nornir.py", line 29, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-24 00:07:33,230 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:01:16,385 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:01:42,592 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:39:17,717 -  nornir.core -     INFO -        run() - Running task 'Verifing VLAN Creation' with args {'comman_srings': 'show vlans'} on 2 hosts
+2022-08-24 12:39:17,718 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:39:17,719 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:41:47,908 -  nornir.core -     INFO -        run() - Running task 'Verifing VLAN Creation' with args {'comman_srings': 'show vlans'} on 2 hosts
+2022-08-24 12:41:47,918 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:41:47,918 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:43:22,820 -  nornir.core -     INFO -        run() - Running task 'show_vlans' with args {} on 2 hosts
+2022-08-24 12:43:22,821 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:43:22,821 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'show_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 24, in show_vlans
+    task.run(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Verifing VLAN Creation (failed)
+
+
+2022-08-24 12:43:22,822 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:43:22,822 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'show_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 24, in show_vlans
+    task.run(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Verifing VLAN Creation (failed)
+
+
+2022-08-24 12:43:42,169 -  nornir.core -     INFO -        run() - Running task 'show_vlans' with args {} on 2 hosts
+2022-08-24 12:43:42,171 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:43:42,172 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'Verifing VLAN Creation' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-08-24 12:43:42,172 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'show_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 24, in show_vlans
+    task.run(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Verifing VLAN Creation (failed)
+
+
+2022-08-24 12:43:42,172 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'show_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 24, in show_vlans
+    task.run(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Verifing VLAN Creation (failed)
+
+
+2022-08-24 12:44:03,082 -  nornir.core -     INFO -        run() - Running task 'push_vlans' with args {} on 1 hosts
+2022-08-24 12:44:03,087 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Bulding Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 12:44:03,087 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'push_vlans' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "05.nornir.py", line 28, in push_vlans
+    i = task.run(task=template_file, name="Bulding Configuration", template="add_vlans.j2",path="./templates")
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Bulding Configuration (failed)
+
+
+2022-08-24 12:45:14,044 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:46:25,526 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 2 hosts
+2022-08-24 12:46:35,554 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'Sending configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.28.129.15:22
+
+
+
+2022-08-24 12:46:35,555 - nornir.core.task -    ERROR -      start() - Host 'spine5': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 27, in add_vlan
+    task.run(task=netmiko_send_config,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Sending configuration (failed)
+
+
+2022-08-24 12:47:07,446 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:47:07,451 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 12:47:07,451 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 15, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-24 12:48:06,334 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:48:06,339 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 12:48:06,339 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 22, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-24 12:48:42,888 -  nornir.core -     INFO -        run() - Running task 'add_vlan' with args {} on 1 hosts
+2022-08-24 12:48:42,893 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 12:48:42,893 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'add_vlan' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 23, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-24 12:48:58,183 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:50:03,853 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:50:18,845 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:50:24,990 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:50:56,086 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:51:32,543 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:51:32,550 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'Generating template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/add_vlans.j2", line 1, in top-level template code
+    vlan {{vlan_id}}
+jinja2.exceptions.UndefinedError: 'vlan_id' is undefined
+
+2022-08-24 12:51:32,568 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    add_vlan(task)
+  File "06.nornir.py", line 23, in add_vlan
+    cmd = task.run(task=template_file,
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generating template (failed)
+
+
+2022-08-24 12:54:07,462 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:54:07,463 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    add_vlan(task)
+  File "06.nornir.py", line 23, in add_vlan
+    print(f"Host ==== {host}")
+NameError: name 'host' is not defined
+
+2022-08-24 12:55:29,643 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2022-08-24 12:55:29,645 - nornir.core.task -    ERROR -      start() - Host 'spine4': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/devasc/python/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "06.nornir.py", line 20, in load_vars
+    add_vlan(task)
+  File "06.nornir.py", line 23, in add_vlan
+    print(f"Host ==== {host}")
+NameError: name 'host' is not defined
+

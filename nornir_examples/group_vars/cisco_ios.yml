@@ -1,0 +1,4 @@
+vlan_id: "10"
+vlan_name: "vlan10"
+snmp_comm_ro: "nornir.ro"
+snmp_comm_rw: "nornir.rw"
