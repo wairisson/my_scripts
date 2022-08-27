@@ -1,0 +1,19 @@
+
+hostname {{hostname}}
+
+{% for interface in interfaces %}
+interface {{interface.name}}
+description {{interface.desc}}
+ip address {{interface.ipv4_add}}
+{% endfor %}
+
+
+router bgp {{bgp_local_as}}
+{% for peer in bgp_peers %}
+neighbor {{peer.ipv4_remote_add}} {{peer.remote_as}} 
+neighbor {{peer.ipv4_remote_add}} {{peer.peer_desc}} 
+ {% for af in peer.address_families %}
+  {{af.chave01}}
+  {{af.chave02}}
+ {% endfor %}
+{% endfor %}

@@ -1,0 +1,51 @@
+## dictionary begin
+#hostname: R1
+#domain: lab.local
+## dictionary end
+
+## variáveis simples inicio
+#hostname
+#domain
+## variáveis simples fim
+
+## lista simples inicio
+# - hostname_a
+# - domain_a
+## lista simples fim
+
+## dict  inicio
+#- chave1: valor_1
+#- chave2: valor_2
+#saida [{'chave1': 'valor_1'}, {'chave2': 'valor_2'}]
+## dict  fim
+
+## dict  inicio
+#chave3: valor_1
+#chave4: valor_2
+# {'chave3': 'valor_1', 'chave4': 'valor_2'}
+#saida {'chave3': 'valor_1', 'chave4': 'valor_2'}
+## dict  fim
+
+hostname: R1
+bgp_local_as: "65500"
+bgp_peers:
+   - peer_desc: "Roteador de Borda 01"
+     ipv4_remote_add: "10.0.0.1"
+     remote_as: "65500"
+   - peer_desc: "Roteador de Borda 02"
+     ipv4_remote_add: "10.0.0.2"
+     remote_as: "65500"
+     address_families:
+        - chave01: "valor01"
+          chave02: "valor02"
+
+
+interfaces:
+   - name: e0/0
+     desc: "Uplink to R2"
+     ipv4_add: "192.168.0.1"
+   - name: e0/1
+     desc: "Uplink to R3"
+     ipv4_add: "192.168.0.2"
+# {'interface': [{'name': 'e0/0', 'desc': 'Uplink to R2', 'ipv4_add': '192.168.0.1'}, {'name': 'e0/1', 'desc': 'Uplink to R3', 'ipv4_add': '192.168.0.2'}]}
+
