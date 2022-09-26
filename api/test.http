@@ -1,0 +1,4 @@
+# arquivo deve ser aberto usando plugin restclient do vscode
+# GET
+
+https://api.discogs.com/labels/6
