@@ -30,7 +30,19 @@ email = generate_email_3("caio")
 print(email)
 
 # o print abaixo retornará erro pois a variável my_email somente existe dentro do ambiente da função
-print(my_email)
+#print(my_email)
+#NameError: name 'my_email' is not defined
+
+# examplo usando a função generate_email_3
+name_list = ["wairisson", "caio", "filipe", "nicolas"]
+email_list = []
+
+# itera sobre a lista name_list e adiciona e-mails já gerados noutra lista email_list
+for name in name_list:
+    email_temp = generate_email_3(name, "cbtnuggets")
+    email_list.append(email_temp)
+
+print(email_list)
 
 
 
