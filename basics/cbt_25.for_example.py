@@ -1,5 +1,5 @@
 #
-## IF #1
+## IF ##1
 #
 age = input("Informe sua idade ")
 
