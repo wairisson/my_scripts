@@ -14,7 +14,7 @@ for item in list4:
     print(type(item))
 
 # Codigo for acima faz o mesmo que o código abaixo
-# Acessando conteúdo das listasu usando os index
+# Acessando conteúdo das listas usando os index
 print(type(list4[0]))
 print(type(list4[1]))
 print(type(list4[2]))
@@ -69,3 +69,15 @@ print(f"Exibindo posições de 0 a 4: {list5[0:5]}")
 print(f"Exibindo posições de 2 em diante: {list5[2:]}")
 print(f"Exibindo posições até a posição  3 em diante: {list5[:4]}")
 print(f"Exibindo posições de 0 a 4 de 2 em 2: {list5[0:5:2]}")
+
+# Métodos
+# append, adiciona objetos a lista
+print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7']
+list1.append("vlan8")
+print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7', 'vlan5']
+
+list1.copy()
+
+# clear, remove todos os objetos da lista
+list1.clear()
+print(list1) # Retorna [] 
