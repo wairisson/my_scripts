@@ -1,7 +1,8 @@
-# Listas permitem armazenamento de múltiplos itens
+# Listas permitem armazenamento de múltiplos itens de multiplos tipos
 # - mútavel
 # Ordenada
 # quantidade de itens em lista depende da quantidade de memória
+# list is a collection of elements, but each element is a scalar.
 
 list1 = ["vlan5","vlan6","vlan7"]
 list2 = ["vlan15","vlan16","vlan17"]
@@ -71,13 +72,79 @@ print(f"Exibindo posições até a posição  3 em diante: {list5[:4]}")
 print(f"Exibindo posições de 0 a 4 de 2 em 2: {list5[0:5:2]}")
 
 # Métodos
+print("\n")
+print("######################### - Método append -###########################\n")
+print("\n")
 # append, adiciona objetos a lista
 print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7']
 list1.append("vlan8")
-print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7', 'vlan5']
+print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7', 'vlan8']
+print("\n")
+print("######################### - Método append -###########################\n")
+print("\n")
 
+
+print("\n")
+print("######################### - Método insert -###########################\n")
+print("\n")
+# insert, adiciona objetos a lista em um índice específico
+print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7']
+list1.insert(0, "vlan99")
+print(list1) # Retorna ['vlan5', 'vlan6', 'vlan7', 'vlan8']
+print("\n")
+print("######################### - Método insert -###########################\n")
+print("\n")
+
+print("\n")
+print("######################### - Método copy -###########################\n")
+print("\n")
 list1.copy()
+print("\n")
+print("######################### - Método copy -###########################\n")
+print("\n")
 
+print("\n")
+print("######################### - Método clear -###########################\n")
+print("\n")
 # clear, remove todos os objetos da lista
 list1.clear()
 print(list1) # Retorna [] 
+print("\n")
+print("######################### - Método clear -###########################\n")
+print("\n")
+# usando índices negativos retornam últimas posições
+numbers = [111, 7, 2, 1]
+print(numbers[-1]) # retorna 1, que é o indice 3
+
+
+#### Hands on
+hat_list = [1, 2, 3, 4, 5]  # This is an existing list of numbers hidden in the hat.
+
+# Step 1: write a line of code that prompts the user
+# to replace the middle number with an integer number entered by the user.
+
+# Step 2: write a line of code that removes the last element from the list.
+
+# Step 3: write a line of code that prints the length of the existing list.
+
+
+####
+
+
+my_list = []  # Creating an empty list.
+
+for i in range(5):
+    my_list.append(i + 1)
+
+print(my_list)
+
+print("\n")
+print("######################### - Somando objetos da lista -###########################\n")
+print("\n")
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total)
